@@ -11,4 +11,12 @@ package chessmate.piece;
  */
 public class Piece {
     
+    protected final int piecePosition;
+    protected final Alliance pieceAlliance;
+    
+    Piece(final int piecePosition, final Alliance pieceAlliance) {
+    this.pieceAllaince = pieceAlliance;
+    this.piecePosition = piecePosition;
+    
+    }
 }
