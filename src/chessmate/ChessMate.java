@@ -5,6 +5,7 @@
  */
 package chessmate;
 
+
 /**
  *
  * @author artog
@@ -15,7 +16,7 @@ public class ChessMate {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        
+        new MainFrame.setVisible(true);
     }
     
 }
