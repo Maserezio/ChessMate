@@ -5,6 +5,7 @@
  */
 package chessmate;
 
+import chessmate.gui.MainFrame;
 
 /**
  *
@@ -16,7 +17,8 @@ public class ChessMate {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        new MainFrame.setVisible(true);
+        MainFrame frame = new MainFrame();
+        frame.setVisible(true);
     }
     
 }

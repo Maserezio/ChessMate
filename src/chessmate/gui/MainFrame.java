@@ -1,7 +1,7 @@
 package chessmate.gui;
 
 import chessmate.board.*;
-import chessmate.board.Move;
+import chessmate.board.Move.MoveFactory;
 import chessmate.pieces.Piece;
 import chessmate.player.Player;
 import chessmate.player.ai.StandardBoardEvaluator;

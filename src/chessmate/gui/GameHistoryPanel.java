@@ -12,7 +12,7 @@ import javax.swing.table.DefaultTableModel;
 
 import chessmate.board.Board;
 import chessmate.board.Move;
-import chessmate.gui.Table.MoveLog;
+//import chessmate.gui.Table.MoveLog;
 
 class GameHistoryPanel extends JPanel {
 

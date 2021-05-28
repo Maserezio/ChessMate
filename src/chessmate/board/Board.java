@@ -23,6 +23,7 @@ import java.util.Map;
 
 public final class Board {
 
+    private Map<Integer, Piece> boardConfig;
     private final List<Tile> gameBoard;
     private final Collection<Piece> whitePieces;
     private final Collection<Piece> blackPieces;
@@ -76,6 +77,10 @@ public final class Board {
         return this.whitePieces;
     }
 
+    public Piece getPiece(final int coordinate) {
+        return this.boardConfig.get(coordinate);
+    }
+    
     public Iterable<Piece> getAllPieces() {
         return Iterables.unmodifiableIterable(Iterables.concat(this.whitePieces, this.blackPieces));
     }

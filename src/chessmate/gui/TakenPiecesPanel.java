@@ -20,7 +20,7 @@ import javax.swing.border.EtchedBorder;
 
 import chessmate.board.Move;
 import chessmate.pieces.Piece;
-import chessmate.gui.Table.MoveLog;
+//import chessmate.gui.Table.MoveLog;
 import com.google.common.primitives.Ints;
 
 class TakenPiecesPanel extends JPanel {

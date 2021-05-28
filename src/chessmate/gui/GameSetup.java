@@ -2,7 +2,7 @@ package chessmate.gui;
 
 import chessmate.alliance.Alliance;
 import chessmate.player.Player;
-import chessmate.gui.Table.PlayerType;
+import chessmate.gui.MainFrame.PlayerType;
 
 import javax.swing.*;
 import java.awt.*;
