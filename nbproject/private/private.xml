@@ -2,6 +2,20 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/Users/artog/Desktop/BlackWidow-Chess-master/src/com/chess/engine/classic/player/ai/IterativeDeepening.java</file>
+            <file>file:/C:/Users/artog/Desktop/BlackWidow-Chess-master/src/com/chess/gui/DebugPanel.java</file>
+            <file>file:/C:/Users/artog/Desktop/BlackWidow-Chess-master/src/com/chess/engine/classic/player/ai/StockAlphaBeta.java</file>
+            <file>file:/C:/Users/artog/Desktop/BlackWidow-Chess-master/src/com/chess/engine/classic/player/ai/MiniMax.java</file>
+            <file>file:/C:/Users/artog/Desktop/BlackWidow-Chess-master/src/com/chess/engine/classic/player/BlackPlayer.java</file>
+            <file>file:/C:/Users/artog/Desktop/BlackWidow-Chess-master/src/com/chess/engine/classic/player/ai/PawnStructureAnalyzer.java</file>
+            <file>file:/C:/Users/artog/Desktop/BlackWidow-Chess-master/src/com/chess/gui/GameHistoryPanel.java</file>
+            <file>file:/C:/Users/artog/Desktop/BlackWidow-Chess-master/src/com/chess/engine/classic/player/ai/KingSafetyAnalyzer.java</file>
+            <file>file:/C:/Users/artog/Desktop/BlackWidow-Chess-master/src/com/chess/gui/TakenPiecesPanel.java</file>
+            <file>file:/C:/Users/artog/Desktop/BlackWidow-Chess-master/src/com/chess/gui/Table.java</file>
+            <file>file:/C:/Users/artog/Desktop/BlackWidow-Chess-master/src/com/chess/engine/classic/player/ai/StandardBoardEvaluator.java</file>
+            <file>file:/C:/Users/artog/Desktop/BlackWidow-Chess-master/src/com/chess/engine/classic/player/ai/MoveOrdering.java</file>
+            <file>file:/C:/Users/artog/Desktop/BlackWidow-Chess-master/src/com/chess/engine/classic/player/ai/MoveStrategy.java</file>
+        </group>
     </open-files>
 </project-private>
