@@ -135,8 +135,7 @@ public abstract class Move {
         final Pawn promotedPawn;
         final Piece promotionPiece;
 
-        public PawnPromotion(final Move decoratedMove,
-                             final Piece promotionPiece) {
+        public PawnPromotion(final Move decoratedMove, final Piece promotionPiece) {
             super(decoratedMove.getBoard(), decoratedMove.getMovedPiece(), decoratedMove.getDestinationCoordinate());
             this.decoratedMove = decoratedMove;
             this.promotedPawn = (Pawn) decoratedMove.getMovedPiece();
@@ -346,11 +345,9 @@ public abstract class Move {
         @Override
         public Board execute() {
             final Board.Builder builder = new Builder();
-            for (final Piece piece : this.board.getAllPieces()) {
-                if (!this.movedPiece.equals(piece) && !this.castleRook.equals(piece)) {
-                    builder.setPiece(piece);
-                }
-            }
+            this.board.getAllPieces().stream().filter(piece -> (!this.movedPiece.equals(piece) && !this.castleRook.equals(piece))).forEachOrdered(piece -> {
+                builder.setPiece(piece);
+            });
             builder.setPiece(this.movedPiece.movePiece(this));
             builder.setPiece(new Rook(this.castleRook.getPieceAllegiance(), this.castleRookDestination, false));
             builder.setMoveMaker(this.board.currentPlayer().getOpponent().getAlliance());

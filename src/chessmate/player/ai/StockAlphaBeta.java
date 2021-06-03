@@ -117,7 +117,7 @@ public class StockAlphaBeta extends Observable implements MoveStrategy {
         final long executionTime = System.currentTimeMillis() - startTime;
         final String result = board.currentPlayer() + " SELECTS " +bestMove+ " [#boards evaluated = " +this.boardsEvaluated+
                 " time taken = " + executionTime /1000+ " rate = " +(1000 * ((double)this.boardsEvaluated/ executionTime));
-        System.out.printf("%s SELECTS %s [#boards evaluated = %d, time taken = %d ms, rate = %.1f\n", board.currentPlayer(),
+        System.out.printf("%s SELECTS %s, time taken = %d ms, rate = %.1f\n", board.currentPlayer(),
                 bestMove, this.boardsEvaluated, executionTime, (1000 * ((double)this.boardsEvaluated/ executionTime)));
         setChanged();
         notifyObservers(result);
@@ -133,7 +133,7 @@ public class StockAlphaBeta extends Observable implements MoveStrategy {
         } else if(currentPlayer.getAlliance().isBlack()) {
             return "[score: " +lowestSeenValue+ "]";
         }
-        throw new RuntimeException("bad bad boy!");
+        throw new RuntimeException("bad!");
     }
 
     private int max(final Board board,
@@ -182,8 +182,7 @@ public class StockAlphaBeta extends Observable implements MoveStrategy {
         return currentLowest;
     }
 
-    private int calculateQuiescenceDepth(final Board toBoard,
-                                         final int depth) {
+    private int calculateQuiescenceDepth(final Board toBoard, final int depth) {
         if(depth == 1 && this.quiescenceCount < MAX_QUIESCENCE) {
             int activityMeasure = 0;
             if (toBoard.currentPlayer().isInCheck()) {
