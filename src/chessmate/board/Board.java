@@ -45,6 +45,26 @@ public final class Board {
         this.transitionMove = builder.transitionMove != null ? builder.transitionMove : MoveFactory.getNullMove();
     }
 
+//    @Override
+//    public String toString() {
+//        final StringBuilder builder = new StringBuilder();
+//        for (int i = 0; i < BoardUtils.NUM_TILES; i++) {
+//            final String tileText = prettyPrint(this.boardConfig.get(i));
+//            builder.append(String.format("%3s", tileText));
+//            if ((i + 1) % 8 == 0) {
+//                builder.append("\n");
+//            }
+//        }
+//        return builder.toString();
+//    }
+
+//    private static String prettyPrint(final Piece piece) {
+//        if(piece != null) {
+//            return piece.getPieceAllegiance().isBlack() ? piece.toString().toLowerCase() : piece.toString();
+//        }
+//        return "-";
+//    }
+
     public Collection<Piece> getBlackPieces() {
         return this.blackPieces;
     }

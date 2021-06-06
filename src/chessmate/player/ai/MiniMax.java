@@ -86,8 +86,7 @@ public final class MiniMax implements MoveStrategy {
         return bestMove;
     }
 
-    private int min(final Board board,
-                    final int depth) {
+    private int min(final Board board, final int depth) {
         if(depth == 0) {
             this.boardsEvaluated++;
             this.freqTable[this.freqTableIndex].increment();
@@ -109,8 +108,7 @@ public final class MiniMax implements MoveStrategy {
         return lowestSeenValue;
     }
 
-    private int max(final Board board,
-                    final int depth) {
+    private int max(final Board board, final int depth) {
         if(depth == 0) {
             this.boardsEvaluated++;
             this.freqTable[this.freqTableIndex].increment();

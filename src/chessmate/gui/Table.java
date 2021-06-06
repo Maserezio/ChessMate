@@ -6,7 +6,7 @@ import chessmate.board.Board;
 import chessmate.board.BoardUtils;
 import chessmate.board.Move.MoveFactory;
 import chessmate.pieces.Piece;
-import chessmate.player.ai.StockAlphaBeta;
+import chessmate.player.ai.AlphaBeta;
 import com.google.common.collect.Lists;
 
 import javax.imageio.ImageIO;
@@ -35,9 +35,8 @@ public final class Table extends Observable {
     private Piece sourceTile;
     private Piece humanMovedPiece;
     private BoardDirection boardDirection;
-    private String pieceIconPath;
-    private boolean highlightLegalMoves;
-    private boolean useBook;
+    private final String pieceIconPath;
+    private final boolean highlightLegalMoves;
     private Color lightTileColor = Color.decode("#eceed4");
     private Color darkTileColor = Color.decode("#749654");
 
@@ -56,7 +55,6 @@ public final class Table extends Observable {
         this.chessBoard = Board.createStandardBoard();
         this.boardDirection = BoardDirection.NORMAL;
         this.highlightLegalMoves = true;
-        this.useBook = false;
         this.pieceIconPath = "art/chesscom/";
         this.gameHistoryPanel = new GameHistoryPanel();
         this.debugPanel = new DebugPanel();
@@ -103,10 +101,6 @@ public final class Table extends Observable {
 
     private boolean getHighlightLegalMoves() {
         return this.highlightLegalMoves;
-    }
-
-    private boolean getUseBook() {
-        return this.useBook;
     }
 
     public void show() {
@@ -186,8 +180,7 @@ public final class Table extends Observable {
         notifyObservers(gameSetup);
     }
 
-    private static class TableGameAIWatcher
-            implements Observer {
+    private static class TableGameAIWatcher implements Observer {
 
         @Override
         public void update(final Observable o, final Object arg) {
@@ -228,16 +221,9 @@ public final class Table extends Observable {
         @Override
         protected Move doInBackground() {
             final Move bestMove;
-            final Move bookMove = MoveFactory.getNullMove();
-            if (Table.get().getUseBook() && bookMove != MoveFactory.getNullMove()) {
-                bestMove = bookMove;
-            }
-            else 
-            {
-                final StockAlphaBeta strategy = new StockAlphaBeta(Table.get().getGameSetup().getSearchDepth());
-                strategy.addObserver(Table.get().getDebugPanel());
-                bestMove = strategy.execute(Table.get().getGameBoard());
-            }
+            final AlphaBeta strategy = new AlphaBeta(Table.get().getGameSetup().getSearchDepth());
+            strategy.addObserver(Table.get().getDebugPanel());
+            bestMove = strategy.execute(Table.get().getGameBoard());
             return bestMove;
         }
 

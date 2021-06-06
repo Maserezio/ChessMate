@@ -77,7 +77,7 @@ public final class StandardBoardEvaluator
         return (int)((player.getLegalMoves().size() * 10.0f) / player.getOpponent().getLegalMoves().size());
     }
 
-    private static int kingThreats(final Player player, final int depth) {
+    private static int kingThreats(final Player player,final int depth) {
         return player.getOpponent().isInCheckMate() ? CHECK_MATE_BONUS  * depthBonus(depth) : check(player);
     }
 
@@ -96,5 +96,4 @@ public final class StandardBoardEvaluator
     private static int pawnStructure(final Player player) {
         return PawnStructureAnalyzer.get().pawnStructureScore(player);
     }
-
 }
